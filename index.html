@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica Integradora | Power BI</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Práctica Integradora de Análisis de Datos</h1>
+    <p>Power BI | Visualización y Asociación de Datos</p>
+    <p>Estudiante: Castillo García Renata</p>
+    <p>Fecha: 06 de noviembre de 2026</p>
+    <p>Grupo: 6951</p>
+  </header>
+
+  <nav>
+    <a href="#objetivo">Objetivo</a>
+    <a href="#kpis">KPIs</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#asociacion">Asociaciones</a>
+    <a href="#conclusiones">Conclusiones</a>
+  </nav>
+
+  <main>
+    <section id="objetivo">
+      <h2>Objetivo y pregunta de negocio</h2>
+      <p>Analizar las ventas de una empresa de tecnología
+      para identificar los productos, regiones y segmentos
+      con mayor participación, así como evaluar la evolución
+      de las ventas entre 2024 y 2025.</p>
+      <p><strong>Decisión:</strong> Determinar dónde
+      concentrar los esfuerzos comerciales.</p>
+      <p><strong>Usuario:</strong> Gerente de ventas.</p>
+    </section>
+
+    <section id="kpis">
+      <h2>Indicadores principales</h2>
+      <div class="tarjetas">
+        <article>
+          <h3>Ventas totales</h3>
+          <p>$7,416,318.43</p>
+          <small>Suma de los importes de venta.</small>
+        </article>
+        <article>
+          <h3>Total de tickets</h3>
+          <p>500</p>
+          <small>Número de ventas únicas.</small>
+        </article>
+        <article>
+          <h3>Ticket promedio</h3>
+          <p>$14,832.64</p>
+          <small>Ventas totales entre tickets.</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="metodologia">
+      <h2>Metodología</h2>
+      <p>Se utilizaron cuatro archivos CSV:
+      hechos_ventas, dim_producto, dim_cliente
+      y dim_fecha.</p>
+      <p>En Power Query se revisaron los tipos de datos,
+      valores nulos, errores y columnas innecesarias.
+      Posteriormente se construyó un modelo estrella
+      relacionando las dimensiones con la tabla de hechos.</p>
+
+      <h3>Calidad de datos</h3>
+      <table>
+        <tr><th>Revisión</th><th>Tratamiento</th></tr>
+        <tr><td>Tipos de datos</td>
+            <td>Asignación de tipos correctos.</td></tr>
+        <tr><td>Valores nulos</td>
+            <td>Verificación de columnas.</td></tr>
+        <tr><td>Errores</td>
+            <td>Comprobación de calidad.</td></tr>
+        <tr><td>Columnas adicionales</td>
+            <td>Eliminación de columnas innecesarias.</td></tr>
+      </table>
+
+      <h3>Modelo de datos</h3>
+      <img src="img/modelo_estrella.png"
+           alt="Modelo estrella de Power BI">
+
+      <h3>Medidas DAX utilizadas</h3>
+      <ul>
+        <li>Ventas Totales: suma de importes.</li>
+        <li>Total Tickets: conteo distinto de VentaID.</li>
+        <li>Ticket Promedio: ventas entre tickets.</li>
+        <li>Cantidad Total: suma de unidades.</li>
+        <li>Ventas Año Anterior: comparación temporal.</li>
+        <li>Porcentaje: variación respecto al año anterior.</li>
+        <li>% Ventas por Categoría: participación porcentual.</li>
+      </ul>
+    </section>
+
+    <section id="resultados">
+      <h2>Resultados del informe</h2>
+      <figure>
+        <img src="img/01_analisis_general.png"
+             alt="Resumen ejecutivo">
+        <figcaption>Figura 1. Resumen ejecutivo de ventas.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/02_productos_clientes.png"
+             alt="Análisis comercial">
+        <figcaption>Figura 2. Productos, clientes y regiones.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/03_tendencia_temporal.png"
+             alt="Tendencia temporal">
+        <figcaption>Figura 3. Evolución de ventas 2024-2025.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/04_asociaciones_hallazgos.png"
+             alt="Asociaciones y hallazgos">
+        <figcaption>Figura 4. Análisis de asociaciones.</figcaption>
+      </figure>
+    </section>
+
+    <section id="asociacion">
+      <h2>Análisis de asociación y correlación</h2>
+      <p>La categoría Cómputo concentra el 90.59% de
+      las ventas. La región Sur presenta una participación
+      del 96.04% en Cómputo, mientras que Occidente
+      registra la mayor proporción de Accesorios,
+      con 10.92%.</p>
+      <p>El gráfico de dispersión muestra una tendencia
+      positiva entre cantidad e importe, aunque existe
+      variabilidad considerable.</p>
+      <h3>Correlación no implica causalidad</h3>
+      <p>Estas relaciones no demuestran que una variable
+      cause cambios en otra. Factores como precios,
+      promociones y temporadas pueden influir.
+      Los datos simulados tampoco permiten generalizar
+      los resultados a consumidores reales.</p>
+    </section>
+
+    <section id="conclusiones">
+      <h2>Conclusiones y recomendaciones</h2>
+      <ol>
+        <li>Priorizar el análisis comercial de Cómputo.</li>
+        <li>Evaluar oportunidades para Accesorios.</li>
+        <li>Revisar las diferencias entre regiones.</li>
+        <li>Monitorear la evolución de ventas por año.</li>
+        <li>Complementar las asociaciones con pruebas estadísticas.</li>
+      </ol>
+      <h3>Limitaciones</h3>
+      <p>El análisis utiliza datos simulados, por lo que
+      sus resultados son ilustrativos. No se realizaron
+      experimentos causales ni pruebas formales de
+      significancia estadística.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Práctica Integradora | Power BI | 2026</p>
+    <p>Castillo García Renata</p>
+  </footer>
+
+</body>
+</html>
